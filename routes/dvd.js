@@ -11,11 +11,10 @@ exports.index  = function(req,res) {
         res.send(Dvd);
     });
 */
-    Dvd.find({},null,sort: {title: 1}}, function (err, titles) {
-            if (err) return res.render('Error occurred');
-            res.send(titles);
-        });
-    )
+    Dvd.find({},null,{sort: {title: 1}}, function (err, titles) {
+        if (err) return res.render('Error occurred');
+        res.send(titles);
+    });
 };
 
 exports.findById = function(req,res) {
@@ -40,7 +39,7 @@ exports.newDvd = function(req,res) {
         }
         res.send(aDVD);
     });
-}
+};
 
 exports.update = function(req,res) {
     Dvd.findById( req.params.id, function(err,Dvd) {
