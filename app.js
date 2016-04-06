@@ -112,9 +112,9 @@ app.get('/dvd',dvdRoute.index);
 app.get('/dvd/:id',dvdRoute.findById);
 app.put('/dvd/:id',dvdRoute.update);
 app.delete('/dvd/:id',dvdRoute.delete)
-app.post('/dvd',dvdRoute.newdvd);
+app.post('/dvd',dvdRoute.newDvd);
 
 
-http.createServer(app).listen(app.get('port'), function(){
+http.createServer(app).listen(app.get('port'), function() {
   console.log("Express server listening on port " + app.get('port'));
 });
