@@ -32,7 +32,7 @@ exports.newDvd = function(req,res) {
 
     console.log(aDVD.title);
 
-    emp.save(function(err) {
+    aDVD.save(function(err) {
         if (err) {
             res.send('Error occurred');
             return console.log(err);
